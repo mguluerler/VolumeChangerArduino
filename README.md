@@ -5,14 +5,14 @@
 &emsp;<b>1)</b> Make your Arduino connections as I show in the pictures.<a href="#arduino"><sup>[1]</sup></a> <br>
 &emsp;<b>2)</b> If you use different analog input don't forget to change Arduino code. <br>
 &emsp;<b>3)</b> In python import the project:<br>
-&emsp;&emsp;<code>```python
-from VolumeChangerArduino import VolumeChangerArduino
-```</code><br>
-&emsp;&emsp;Assign the class object to your variable:<br>
-&emsp;&emsp;<code>x = VolumeChangerArduino(<kbd>port</kbd>, <kbd>baudrate</kbd>, <kbd>sleeptime</kbd>)<br></code>
+&emsp;&emsp;<code class="language-python">from VolumeChangerArduino import VolumeChangerArduino</code><br>
+&emsp;&emsp;Assign the class object to your variable:<br><br>
+&emsp;&emsp;<code><var>yourVariable</var> = VolumeChangerArduino(<kbd>port</kbd>, <kbd>baudrate</kbd>, <kbd>sleeptime</kbd>)</code><br>
 &emsp;&emsp;&emsp;<kbd>port</kbd>: Arduino port as string. (port="COM6")<br>
 &emsp;&emsp;&emsp;<kbd>baudrate</kbd>: Arduino baudrate as int. (baudrate=115200)<br>
-&emsp;&emsp;&emsp;<kbd>sleeptime</kbd>: Waiting time before passing next loop to get serial input in seconds as int. (sleeptime=0.001)
+&emsp;&emsp;&emsp;<kbd>sleeptime</kbd>: Waiting time before passing next loop to get serial input in seconds as int. (sleeptime=0.001)<br>
+&emsp;<b>4)</b> Run the app:<br>
+&emsp;&emsp;<code><var>yourVariable</var>.run()</code>
 </p>
 
 <h2><b>Images</b></h2>
