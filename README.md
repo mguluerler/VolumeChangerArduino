@@ -1,19 +1,18 @@
 # VolumeChangerArduino
-<b>Summary:</b> Designed for changing computer volume with potentiometer.
-<h2><b>How do you setup?</b></h2>
-<p>
-&emsp;<b>1)</b> Make your Arduino connections as I show in the pictures.<a href="#arduino"><sup>[1]</sup></a> <br>
-&emsp;<b>2)</b> If you use different analog input don't forget to change Arduino code. <br>
-&emsp;<b>3)</b> In python import the project:<br>
-&emsp;&emsp;<code><span class="pl-k">from<span> VolumeChangerArduino import VolumeChangerArduino</code><br><br>
-&emsp;&emsp;Assign the class object to your variable:<br>
-&emsp;&emsp;<code><var>yourVariable</var> = VolumeChangerArduino(<kbd>port</kbd>, <kbd>baudrate</kbd>, <kbd>sleeptime</kbd>)</code><br>
-&emsp;&emsp;&emsp;<kbd>port</kbd>: Arduino port as string. (port="COM6")<br>
-&emsp;&emsp;&emsp;<kbd>baudrate</kbd>: Arduino baudrate as int. (baudrate=115200)<br>
-&emsp;&emsp;&emsp;<kbd>sleeptime</kbd>: Waiting time before passing next loop to get serial input in seconds as int. (sleeptime=0.001)<br>
-&emsp;<b>4)</b> Run the app:<br>
-&emsp;&emsp;<code><var>yourVariable</var>.run()</code>
-</p>
+**Summary:** Designed for changing computer volume with potentiometer.
+## **How do you setup?**
+    **1)** Make your Arduino connections as I show in the [pictures](#arduino).
+    **2)** If you use different analog input don't forget to change Arduino code.
+    **3)** In python import the project:
+        ```python from VolumeChangerArduino import VolumeChangerArduino```
+        Assign the class object to your variable:<br>
+        <code><var>yourVariable</var> = VolumeChangerArduino(<kbd>port</kbd>, <kbd>baudrate</kbd>, <kbd>sleeptime</kbd>)</code><br>
+            <kbd>port</kbd>: Arduino port as string. (port="COM6")<br>
+            <kbd>baudrate</kbd>: Arduino baudrate as int. (baudrate=115200)<br>
+            <kbd>sleeptime</kbd>: Waiting time before passing next loop to get serial input in seconds as int. (sleeptime=0.001)<br>
+    <b>4)</b> Run the app:<br>
+    &emsp;<code><var>yourVariable</var>.run()</code>
+
 
 <h2><b>Images</b></h2>
 <h3 id="arduino">&emsp;<b>Arduino Circuit</b></h3>
