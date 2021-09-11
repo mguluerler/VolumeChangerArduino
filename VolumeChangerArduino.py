@@ -66,5 +66,6 @@ class VolumeChangerArduino():
     def run(self):
         self.volumeChanger()
 
-x = VolumeChangerArduino()
-x.run()
+if __name__ == "__main__":
+    x = VolumeChangerArduino()
+    x.run()
