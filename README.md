@@ -26,9 +26,9 @@ yourVariable.run()
 <p align="center"><img src="/images/circuit.png" width=60% height=auto><br></p>
 <h3 id="COM">&emsp;<b>Finding Arduino Port</b></h3>
 <p align="center">&emsp;In <kbd>Device Manager</kbd> go to <kbd>Ports (COM & LPT)</kbd> then find your Arduino port.</p>
-<p align="center"><img src="/images/port1.png" width=60% height=auto><br></p>
-<p align="center"><img src="/images/port2.png" width=60% height=auto><br></p>
-<p align="center"><img src="/images/port3.png" width=60% height=auto><br></p>
+<p align="center"><img src="/images/port1.png" width=33% height=auto><br></p>
+<p align="center"><img src="/images/port2.png" width=33% height=auto><br></p>
+<p align="center"><img src="/images/port3.png" width=33% height=auto><br></p>
 <h3>&emsp;<b>Why are there too much function created with curve_fit?</b></h3>
 <p>&emsp;Because if single function used, it's error rises too much as shown in the picture.</p>
 <p align="center"><img src="/images/setup_graph.png" width=60% height=auto></p>
