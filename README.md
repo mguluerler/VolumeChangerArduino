@@ -5,7 +5,7 @@
 &emsp;<b>1)</b> Make your Arduino connections as I show in the pictures.<a href="#arduino"><sup>[1]</sup></a> <br>
 &emsp;<b>2)</b> If you use different analog input don't forget to change Arduino code. <br>
 &emsp;<b>3)</b> In python import the project:<br>
-&emsp;&emsp;<code class="language-python">&lt;p&gt;from VolumeChangerArduino import VolumeChangerArduino&lt;/p&gt;</code><br><br>
+&emsp;&emsp;<code><span class="pl-k">from<span> VolumeChangerArduino import VolumeChangerArduino</code><br><br>
 &emsp;&emsp;Assign the class object to your variable:<br>
 &emsp;&emsp;<code><var>yourVariable</var> = VolumeChangerArduino(<kbd>port</kbd>, <kbd>baudrate</kbd>, <kbd>sleeptime</kbd>)</code><br>
 &emsp;&emsp;&emsp;<kbd>port</kbd>: Arduino port as string. (port="COM6")<br>
