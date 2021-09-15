@@ -8,9 +8,9 @@ from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
 
 class VolumeChangerArduino():
     def __init__(self, port="COM6", baudrate=115200, sleeptime=0.001):
-        self.baudrate = baudrate
+        self.arduino = serial.Serial(port=port, baudrate=baudrate, timeout=1)
         self.sleeptime = sleeptime
-        self.port = port
+        self.serialData = ""
         self.volume_level = 0
         self.older_volume = 0
         self.popt = []
@@ -40,17 +40,20 @@ class VolumeChangerArduino():
         self.volume.GetMasterVolumeLevel()
         self.volume.GetVolumeRange()
 
+    def serialGetData(self):
+        self.serialData = ""
+        while self.arduino.in_waiting > 0:
+            self.serialData += self.arduino.read().decode("ascii")
+        return self.serialData
+
     def volumeChanger(self):
-        arduino = serial.Serial(port=self.port, baudrate=self.baudrate, timeout=1)
-        serial_input = ""
         while True:
-            while arduino.in_waiting > 0:
-                serial_input += arduino.read().decode("ascii")
-            if serial_input != "":
-                if "\n" in serial_input:
-                    self.volume_level = int(serial_input.rstrip().split("\r\n")[-1])
-                elif type(serial_input) == str:
-                    self.volume_level = int(serial_input)
+            self.serialGetData()
+            if self.serialData != "":
+                if "\n" in self.serialData:
+                    self.volume_level = int(self.serialData.rstrip().split("\r\n")[-1])
+                elif type(self.serialData) == str:
+                    self.volume_level = int(self.serialData)
                 time.sleep(self.sleeptime * 10)
                 if self.older_volume != self.volume_level:
                     if self.volume_level == 100:
@@ -60,7 +63,7 @@ class VolumeChangerArduino():
                             if self.volume_level <= self.xdata[i+2] and self.volume_level >= self.xdata[i]:
                                 self.volume.SetMasterVolumeLevel(-1*(VolumeChangerArduino.volumeFormatter(self.volume_level, *self.popt[int(i/2)])), None)
                     self.older_volume = self.volume_level
-            serial_input = ""
+            self.serialData = ""
             time.sleep(self.sleeptime)
 
     def run(self):
