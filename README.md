@@ -20,6 +20,33 @@ yourVariable = VolumeChangerArduino(port, baudrate, sleeptime)
 yourVariable.run()
 ```
 
+## **Special Methods**
+### &emsp;**Show the Volume in Widget (.useWidget)**
+```python
+yourVariable.useWidget(widget_latency=10, position="brb", taskbar_thick=0.03, size=0.08, transparency=1, margin=0)
+```
+>`widget_latency`: *Widget refresh rate in ms. (widget_latency=10)*<br>
+>`position`: *Which side of your screen? (position="brb")*<br>
+>>*1st char for b:bottom, t:top;*<br>
+>>*2nd char for r:right, l:left;*<br>
+>>*3rd char for where is your taskbar? b:bottom, t:top, l:left, r:right.*<br>
+
+>`taskbar_thick`: *Ratio of taskbar to resolution. This value should be: (taskbar_thick=0.03)*<br>
+>>*If your taskbar at left or right: taskbar_thick = (taskbar width)/(width of desktop resoulution)*<br>
+>>*If your taskbar at bottom or top: taskbar_thick = (taskbar height)/(height of desktop resoulution)*<br>
+
+>`size`: *Widget size. Source code: (size=0.08)*<br>
+```python
+    if size <= 1:
+        fontsize = math.floor(height_of_desktop_resoulution*size)
+    else:
+        fontsize = math.floor(size)
+```
+
+>`transparency`: *Widget transparency. (transparency=1)*<br>
+>>*transparency must be between 0 and 1.*<br>
+
+>`margin`: *Screen edge-widget margin in pixel. (margin=0)*<br>
 ## **Images**
 <h3 id="arduino">&emsp;<b>Arduino Circuit</b></h3>
 <p align="center"><kbd>1kOhm</kbd> <i>constant resistor used</i> <b>|</b> <kbd>100kOhm</kbd> <i>potentiometer used.</i></p>
